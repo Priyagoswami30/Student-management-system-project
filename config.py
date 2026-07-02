@@ -1,0 +1,1 @@
+FLASK_SECRET_KEY="dev-secret-key"

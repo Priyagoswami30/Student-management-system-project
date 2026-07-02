@@ -1,0 +1,52 @@
+body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f9; color: #333; }
+.container { max-width: 900px; margin: auto; padding: 20px; }
+
+
+.navbar { background: #2d6cdf; color: #fff; padding: 15px 0; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.4em; font-weight: bold; color: #fff; text-decoration: none; }
+
+
+.footer { text-align: center; padding: 15px; background: #fff; margin-top: 40px; border-top: 1px solid #ddd; }
+
+
+.page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.search-form input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+.search-form button { padding: 8px 14px; }
+
+
+.table { width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.table th, .table td { padding: 12px; border-bottom: 1px solid #ddd; text-align: left; }
+.table th { background: #f0f2f5; font-weight: 600; }
+.table tr:hover { background: #f9fafc; }
+
+
+.btn-primary { background: #2d6cdf; color: #fff; padding: 8px 14px; border: none; border-radius: 4px; text-decoration: none; cursor: pointer; }
+.btn-primary:hover { background: #1f4ea8; }
+
+
+.btn-secondary { background: #e0e7ef; color: #333; padding: 8px 14px; border: none; border-radius: 4px; text-decoration: none; cursor: pointer; }
+.btn-secondary:hover { background: #cdd6e3; }
+
+
+.btn-danger { background: #dc3545; color: #fff; padding: 8px 14px; border: none; border-radius: 4px; cursor: pointer; }
+.btn-danger:hover { background: #b52a37; }
+
+
+.form-card, .detail-card { background: #fff; padding: 20px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+.form-card h3, .detail-card h3 { margin-top: 0; margin-bottom: 15px; }
+
+
+.form-card input { width: 100%; padding: 10px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 4px; }
+.form-actions { display: flex; gap: 10px; margin-top: 10px; }
+
+
+.flash-messages { margin-bottom: 20px; }
+.flash { padding: 10px; border-radius: 4px; margin-bottom: 10px; }
+.flash.success { background: #d1e7dd; color: #0f5132; }
+.flash.danger { background: #f8d7da; color: #842029; }
+.flash.info { background: #cff4fc; color: #055160; }
+
+
+.inline { display: inline; }
+.text-center { text-align: center; }
