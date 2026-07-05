@@ -2,23 +2,22 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>{% block title %}Student Management{% endblock %}</title>
-
-
+<title>{% block title %}StudentPulse{% endblock %}</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+<div class="site-shell">
 <header class="navbar">
 <div class="container nav-container">
-<a href="{{ url_for('index') }}" class="logo">StudentMgmt</a>
-<nav>
+<a href="{{ url_for('index') }}" class="logo">StudentPulse</a>
+<nav class="nav-actions">
+<a href="{{ url_for('index') }}" class="nav-link">All Students</a>
 <a href="{{ url_for('add_student') }}" class="btn-primary">Add Student</a>
 </nav>
 </div>
 </header>
 
-
-<main class="container">
+<main class="container page-container">
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
 <div class="flash-messages">
@@ -35,7 +34,8 @@
 
 
 <footer class="footer">
-<div class="container">© StudentMgmt — Built with ❤️</div>
+<div class="container">©StudentPulse</div>
 </footer>
+</div>
 </body>
 </html>

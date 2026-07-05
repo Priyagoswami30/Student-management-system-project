@@ -1,31 +1,36 @@
 {% extends 'base.html' %}
-{% block title %}Add Student — StudentMgmt{% endblock %}
+{% block title %}Add Student — StudentPulse{% endblock %}
 {% block content %}
 <div class="form-card">
-<h3>Add Student</h3>
+<h1 class="card-title">Add Student</h1>
+<p class="card-copy">Create a new student record with clean, mobile-friendly form fields.</p>
 <form method="post">
-<label>Name *</label>
-<input name="name" value="{{ name or '' }}" required>
-
-
-<label>Roll *</label>
-<input name="roll" value="{{ roll or '' }}" required>
-
-
-<label>Class</label>
-<input name="class" value="{{ sclass or '' }}">
-
-
-<label>Email</label>
-<input type="email" name="email" value="{{ email or '' }}">
-
-
-<label>Age</label>
-<input type="number" min="1" name="age" value="{{ age or '' }}">
-
+<div class="form-grid">
+<div class="field full">
+<label for="name">Name *</label>
+<input id="name" name="name" value="{{ name or '' }}" placeholder="Enter student name" autocomplete="name" required>
+</div>
+<div class="field">
+<label for="roll">Roll *</label>
+<input id="roll" name="roll" value="{{ roll or '' }}" placeholder="Enter roll number" autocomplete="off" required>
+<small>Roll will become the record identifier.</small>
+</div>
+<div class="field">
+<label for="class">Class</label>
+<input id="class" name="class" value="{{ sclass or '' }}" placeholder="Enter class">
+</div>
+<div class="field">
+<label for="email">Email</label>
+<input id="email" type="email" name="email" value="{{ email or '' }}" placeholder="Enter email address" autocomplete="email">
+</div>
+<div class="field">
+<label for="age">Age</label>
+<input id="age" type="number" min="1" name="age" value="{{ age or '' }}" placeholder="Enter age" inputmode="numeric">
+</div>
+</div>
 
 <div class="form-actions">
-<button type="submit" class="btn-primary">Create</button>
+<button type="submit" class="btn-primary">Create Student</button>
 <a href="{{ url_for('index') }}" class="btn-secondary">Cancel</a>
 </div>
 </form>

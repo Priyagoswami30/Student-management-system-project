@@ -2,30 +2,35 @@
 {% block title %}Edit {{ student.name }} — StudentMgmt{% endblock %}
 {% block content %}
 <div class="form-card">
-<h3>Edit Student</h3>
+<h1 class="card-title">Edit Student</h1>
+<p class="card-copy">Update the record and keep the roll number as the document id.</p>
 <form method="post">
-<label>Name *</label>
-<input name="name" value="{{ student.name or '' }}" required>
-
-
-<label>Roll *</label>
-<input name="roll" value="{{ student.roll or '' }}" required>
-
-
-<label>Class</label>
-<input name="class" value="{{ student.class or '' }}">
-
-
-<label>Email</label>
-<input type="email" name="email" value="{{ student.email or '' }}">
-
-
-<label>Age</label>
-<input type="number" min="1" name="age" value="{{ student.age or '' }}">
-
+<div class="form-grid">
+<div class="field full">
+<label for="name">Name *</label>
+<input id="name" name="name" value="{{ student.name or '' }}" placeholder="Enter student name" autocomplete="name" required>
+</div>
+<div class="field">
+<label for="roll">Roll *</label>
+<input id="roll" name="roll" value="{{ student.roll or '' }}" placeholder="Enter roll number" autocomplete="off" required>
+<small>This value stays tied to the document id.</small>
+</div>
+<div class="field">
+<label for="class">Class</label>
+<input id="class" name="class" value="{{ student.class or '' }}" placeholder="Enter class">
+</div>
+<div class="field">
+<label for="email">Email</label>
+<input id="email" type="email" name="email" value="{{ student.email or '' }}" placeholder="Enter email address" autocomplete="email">
+</div>
+<div class="field">
+<label for="age">Age</label>
+<input id="age" type="number" min="1" name="age" value="{{ student.age or '' }}" placeholder="Enter age" inputmode="numeric">
+</div>
+</div>
 
 <div class="form-actions">
-<button type="submit" class="btn-primary">Save</button>
+<button type="submit" class="btn-primary">Save Changes</button>
 <a href="{{ url_for('view_student', id=student._id) }}" class="btn-secondary">Cancel</a>
 </div>
 </form>

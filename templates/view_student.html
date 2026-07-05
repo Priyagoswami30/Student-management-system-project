@@ -2,19 +2,40 @@
 {% block title %}{{ student.name }} — Student Details{% endblock %}
 {% block content %}
 <div class="detail-card">
-<h3>{{ student.name }}</h3>
-<p><strong>Roll:</strong> {{ student.roll }}</p>
-<p><strong>Class:</strong> {{ student.class or '-' }}</p>
-<p><strong>Email:</strong> {{ student.email or '-' }}</p>
-<p><strong>Age:</strong> {{ student.age or '-' }}</p>
-
-
+<div class="detail-layout">
+<div class="profile-panel">
+<h1 class="profile-name">{{ student.name }}</h1>
+<div class="profile-badge">Roll {{ student.roll }}</div>
+<p class="card-copy">A focused student profile with the most important details surfaced first.</p>
 <div class="form-actions">
-<a href="{{ url_for('edit_student', id=student._id) }}" class="btn-primary">Edit</a>
+<a href="{{ url_for('edit_student', id=student._id) }}" class="btn-primary">Edit Student</a>
 <form method="post" action="{{ url_for('delete_student', id=student._id) }}" onsubmit="return confirm('Delete this student?');" class="inline">
-<button class="btn-danger">Delete</button>
+<button type="submit" class="btn-danger">Delete</button>
 </form>
 <a href="{{ url_for('index') }}" class="btn-secondary">Back</a>
+</div>
+</div>
+
+<div class="detail-panel">
+<div class="info-grid">
+<div class="info-item">
+<div class="info-label">Class</div>
+<div class="info-value">{{ student.class or '-' }}</div>
+</div>
+<div class="info-item">
+<div class="info-label">Age</div>
+<div class="info-value">{{ student.age or '-' }}</div>
+</div>
+<div class="info-item full">
+<div class="info-label">Email</div>
+<div class="info-value">{{ student.email or '-' }}</div>
+</div>
+<div class="info-item full">
+<div class="info-label">Document id</div>
+<div class="info-value">{{ student._id }}</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 {% endblock %}

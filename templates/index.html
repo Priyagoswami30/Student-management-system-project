@@ -1,15 +1,35 @@
 {% extends 'base.html' %}
-{% block title %}Students — StudentMgmt{% endblock %}
+{% block title %}Students — StudentPulse{% endblock %}
 {% block content %}
+<section class="page-hero">
 <div class="page-header">
-<h2>Students</h2>
+<div>
+<h1 class="page-title">Students</h1>
+<p class="page-subtitle">Manage student records in a cleaner workspace with faster search, clearer actions, and a layout that adapts across screen sizes.</p>
+</div>
 <form method="get" action="{{ url_for('index') }}" class="search-form">
-<input name="q" value="{{ q }}" placeholder="Search name, roll or class">
+<input name="q" value="{{ q }}" placeholder="Search name, roll or class" aria-label="Search students">
 <button type="submit" class="btn-primary">Search</button>
 </form>
 </div>
+<div class="stats-grid">
+<div class="stat">
+<div class="stat-label">Total students</div>
+<div class="stat-value">{{ students|length }}</div>
+</div>
+<div class="stat">
+<div class="stat-label">Active filters</div>
+<div class="stat-value">{{ 1 if q else 0 }}</div>
+</div>
+<div class="stat">
+<div class="stat-label">Quick action</div>
+<div class="stat-value">Add new</div>
+</div>
+</div>
+</section>
 
-
+<section class="table-card">
+<div class="table-scroll">
 <table class="table">
 <thead>
 <tr>
@@ -36,8 +56,14 @@
 </td>
 </tr>
 {% else %}
-<tr><td colspan="5" class="text-center">No students found.</td></tr>
+<tr>
+<td colspan="5">
+<div class="empty-state">No students found. Add a record to get started or clear the search filter.</div>
+</td>
+</tr>
 {% endfor %}
 </tbody>
 </table>
+</div>
+</section>
 {% endblock %}
